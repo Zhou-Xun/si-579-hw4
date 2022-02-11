@@ -33,6 +33,9 @@ const submitFunction = e => {
     const curTime = dateAndTimeToTimestamp(dateInput, timeInput);
     addTask(descriptionInput, curTime);
     descriptionInput.value = "";
+    dateInput.value = "";
+    timeInput.value = "";
+
     //    Removing "done" tasks, everytime after I create a new task, I need to add remove event to done button
     const done = document.querySelectorAll('.done')
     done.forEach(element => element.addEventListener('click', e => {
