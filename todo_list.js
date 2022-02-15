@@ -1,6 +1,7 @@
 const addTask = (descriptionInput, dueTime=false) => {
     const task = document.querySelector('#task_list');
-    const localeString = new Date(dueTime).toLocaleString();
+    const date =new Date(dueTime);
+    const localeString = date.toLocaleDateString()+' '+date.toLocaleTimeString('en-US');
 
     if (dueTime !== false) {
         task.innerHTML += `<li>${descriptionInput.value}<span class="due">due ${localeString}</span><button class="btn btn-sm btn-outline-danger done" type="button">Done</button></li>`
